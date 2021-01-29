@@ -1,0 +1,31 @@
+# .circleci/config.yml
+# Pipeline --> Workflows --> Jobs --> Steps
+
+version: 2.1
+
+jobs:
+  run_django_tests: # job name
+    docker: # declare an executor
+      - image: circleci/python:3.8.2-buster
+    steps:
+      - checkout # built in step available accros all CircleCI projects
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
+      - restore_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - run:
+          name: Install Dependencies
+          command: |
+            pip3 install --user -r requirements.txt
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.8/site-packages"
+      - run: python3 manage.py test
+
+workflows:
+  main: # name of the workflow
+    jobs:
+      - run_django_tests
