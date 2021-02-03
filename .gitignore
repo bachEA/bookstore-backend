@@ -6,3 +6,11 @@ __pycache__
 .coveralls.yml
 .coverage
 test_dot_env.py
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+
+
