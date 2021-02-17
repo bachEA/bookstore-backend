@@ -6,6 +6,7 @@ __pycache__
 .coveralls.yml
 .coverage
 test_dot_env.py
+test_foo.py
 
 # Text backup files
 *.bak
