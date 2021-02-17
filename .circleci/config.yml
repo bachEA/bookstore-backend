@@ -1,11 +1,12 @@
 # .circleci/config.yml
 # Pipeline --> Workflows --> Jobs --> Steps
 
-version: 2.1
+version: 2.0
 jobs:
   test:
     docker:
       - image: circleci/python:3.6
+    working_directory: ~/bookstore
     steps:
       - checkout
       - restore_cache:
@@ -31,10 +32,23 @@ jobs:
           path: test-reports/
           destination: python_app
 
-
-
+  deploy:
+    docker:
+      - image: circleci/python:3.6
+    working_directory: ~/bookstore
+    steps:
+      - checkout
+      - run:
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git chore/755-setup-CD-backend:main -f
 workflows:
-  main: # name of the workflow
+  version: 2
+  test-and-deploy:
     jobs:
       - test
-   
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: chore/755-setup-CD-backend
