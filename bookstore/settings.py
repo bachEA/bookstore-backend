@@ -167,9 +167,11 @@ USE_TZ = True
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 # . os.path.join(BASE_DIR, 'staticfiles')
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_ROOT = STATIC_ROOT / 'images'
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
