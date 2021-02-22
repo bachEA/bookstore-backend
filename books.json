@@ -13,7 +13,8 @@
         "total_rating_value": 4.5,
         "total_rating_count": 10000,
         "created_date": "2021-01-07T14:07:13.540Z",
-        "updated_date": "2021-01-07T14:07:13.540Z"
+        "updated_date": "2021-01-07T14:07:13.540Z",
+        "image": "/book3_ss.jpeg"
       }
     },
     {
@@ -22,15 +23,16 @@
       "fields": {
         "title": "Harry Potter and the Deathly Hallows",
         "description": "Harry Potter and the Deathly Hallows is a fantasy novel ",  
-            "author_name": "J. K. Rowling",
-            "publiser_name": "Bloomsbury Publishing",
-            "published_date": "2007-07-21",
-            "unit_price": 29.99,
-            "photo": "https://images-na.ssl-images-amazon.com/images/I/71sH3vxziLL.jpg",
-            "total_rating_value": 4.5,
-            "total_rating_count": 10000,
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://images-na.ssl-images-amazon.com/images/I/71sH3vxziLL.jpg",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
         "created_date": "2021-01-07T14:06:59.408Z",
-        "updated_date": "2021-01-07T14:06:59.408Z"
+        "updated_date": "2021-01-07T14:06:59.408Z",
+        "image": "/book1_ss.jpg"
       }
     },
     {
@@ -47,7 +49,116 @@
         "total_rating_value": 4.5,
         "total_rating_count": 10000,
         "created_date": "2021-01-07T14:06:51.542Z",
-        "updated_date": "2021-01-07T14:06:51.542Z"
+        "updated_date": "2021-01-07T14:06:51.542Z",
+        "image": "/book2_ss.jpeg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 4,
+      "fields": {
+        "title": "Harry Potter and the Deathly Hallows",
+        "description": "Harry Potter and the Deathly Hallows is a fantasy novel ",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://images-na.ssl-images-amazon.com/images/I/71sH3vxziLL.jpg",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:59.408Z",
+        "updated_date": "2021-01-07T14:06:59.408Z",
+        "image": "/book1_ss.jpg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 5,
+      "fields": {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "description": "Harry, Ron and Hermoine return to Hogwarts just as they learn about Sirius Black and his plans to kill Harry. However, when Harry runs into him, he learns that the truth is far from reality.",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQASlc6WT5QmRKVUU_rbZzRy4vL9rcTm9awxg&usqp=CAU",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:51.542Z",
+        "updated_date": "2021-01-07T14:06:51.542Z",
+        "image": "/book2_ss.jpeg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 6,
+      "fields": {
+        "title": "Harry Potter and the Deathly Hallows",
+        "description": "Harry Potter and the Deathly Hallows is a fantasy novel ",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://images-na.ssl-images-amazon.com/images/I/71sH3vxziLL.jpg",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:59.408Z",
+        "updated_date": "2021-01-07T14:06:59.408Z",
+        "image": "/book1_ss.jpg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 7,
+      "fields": {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "description": "Harry, Ron and Hermoine return to Hogwarts just as they learn about Sirius Black and his plans to kill Harry. However, when Harry runs into him, he learns that the truth is far from reality.",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQASlc6WT5QmRKVUU_rbZzRy4vL9rcTm9awxg&usqp=CAU",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:51.542Z",
+        "updated_date": "2021-01-07T14:06:51.542Z",
+        "image": "/book2_ss.jpeg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 8,
+      "fields": {
+        "title": "Harry Potter and the Deathly Hallows",
+        "description": "Harry Potter and the Deathly Hallows is a fantasy novel ",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://images-na.ssl-images-amazon.com/images/I/71sH3vxziLL.jpg",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:59.408Z",
+        "updated_date": "2021-01-07T14:06:59.408Z",
+        "image": "/book1_ss.jpg"
+      }
+    },
+    {
+      "model": "books.book",
+      "pk": 9,
+      "fields": {
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "description": "Harry, Ron and Hermoine return to Hogwarts just as they learn about Sirius Black and his plans to kill Harry. However, when Harry runs into him, he learns that the truth is far from reality.",  
+        "author_name": "J. K. Rowling",
+        "publiser_name": "Bloomsbury Publishing",
+        "published_date": "2007-07-21",
+        "unit_price": 29.99,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQASlc6WT5QmRKVUU_rbZzRy4vL9rcTm9awxg&usqp=CAU",
+        "total_rating_value": 4.5,
+        "total_rating_count": 10000,
+        "created_date": "2021-01-07T14:06:51.542Z",
+        "updated_date": "2021-01-07T14:06:51.542Z",
+        "image": "/book2_ss.jpeg"
       }
     }
   ]

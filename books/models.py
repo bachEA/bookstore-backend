@@ -10,6 +10,7 @@ class Book(models.Model):
         auto_now=False, auto_now_add=False)
     unit_price = models.DecimalField(max_digits=5, decimal_places=2)
     photo = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='', blank=True, null=True)
     total_rating_value = models.DecimalField(
         max_digits=2, decimal_places=1)
     total_rating_count = models.IntegerField()

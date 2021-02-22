@@ -173,6 +173,12 @@ MEDIA_ROOT = STATIC_ROOT / 'images'
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    # BASE_DIR / 'staticfiles',
+    BASE_DIR / 'staticfiles' / 'images',
+]
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 # Add compression and caching support
@@ -199,3 +205,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+SITE_ID = 1
