@@ -8,6 +8,8 @@ from .models import Book
 from .serializers import BookSerializer
 from rest_framework import generics
 
+from rest_framework.settings import api_settings
+
 
 # class BookList(generics.ListCreateAPIView):
 
@@ -28,6 +30,8 @@ class BookList(APIView):
         View to list all books in the database
     """
 
+    pagination_class = api_settings.DEFAULT_AUTHENTICATION_CLASSES
+
     def post(self, request, format=None):
         serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
@@ -37,7 +41,10 @@ class BookList(APIView):
 
     def get(self, request, format=None):
         books = Book.objects.all()
-        serializer = BookSerializer(books, many=True)
+
+        results = self.paginate_queryset(books, request, view=self)
+        # serializer = BookSerializer(books, many=True)
+        serializer = BookSerializer(results, many=True)
         return Response(serializer.data)
 
 
