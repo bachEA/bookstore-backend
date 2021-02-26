@@ -2,35 +2,20 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
-
 from .models import Book
 from .serializers import BookSerializer
-from rest_framework import generics
-
-from rest_framework.settings import api_settings
-
-
-# class BookList(generics.ListCreateAPIView):
-
-#     queryset = Book.objects.all()
-#     serializer_class = BookSerializer
-
-
-# class BookDetail(generics.RetrieveUpdateDestroyAPIView):
-
-#     queryset = Book.objects.all()
-#     serializer_class = BookSerializer
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Explicit implementation of list and individual endpoints
+
+
 class BookList(APIView):
+
+    books_per_page = 2
 
     """
         View to list all books in the database
     """
-
-    pagination_class = api_settings.DEFAULT_AUTHENTICATION_CLASSES
 
     def post(self, request, format=None):
         serializer = BookSerializer(data=request.data)
@@ -40,12 +25,34 @@ class BookList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, format=None):
-        books = Book.objects.all()
+        query = request.query_params.get("keyword")
 
-        results = self.paginate_queryset(books, request, view=self)
+        if (not query):
+            query = ""
+        all_books = Book.objects.all()
+
+        filtered_books = Book.objects.filter(
+            title__icontains=query).order_by("id")
+
+        rendered_books = filtered_books
+
+        page = request.query_params.get('page')
+        paginator = Paginator(rendered_books, self.books_per_page)
+
+        try:
+            books_paginated = paginator.page(page)
+        except PageNotAnInteger:
+            books_paginated = paginator.page(1)
+        except EmptyPage:
+            books_paginated = paginator.page(paginator.num_pages)
+
+        # When visit the homepage (no query yet)
+        if (page == None):
+            page = 1
+
         # serializer = BookSerializer(books, many=True)
-        serializer = BookSerializer(results, many=True)
-        return Response(serializer.data)
+        serializer = BookSerializer(books_paginated, many=True)
+        return Response({'books': serializer.data, 'pages': paginator.num_pages, 'page': page})
 
 
 class BookDetail(APIView):
